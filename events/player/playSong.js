@@ -7,11 +7,11 @@ module.exports = async (client, queue, song) => {
     if (queue?.textChannel) {
       const embed = new EmbedBuilder()
       .setAuthor({
-        name: 'Currently playing a Track',
+        name: 'Actualmente ya estoy reproduciendo una pista uwu',
         iconURL: 'https://cdn.discordapp.com/attachments/1140841446228897932/1144671132948103208/giphy.gif', 
         url: 'https://discord.gg/FUEHs7RCqz'
     })
-    .setDescription(`\n ‎ \n▶️ **Details :** **${song?.name}**\n▶️ **Enjoy the Ultimate Music Experience. ** \n▶️ **If link breaks playback try to give query.**`)
+    .setDescription(`\n ‎ \n▶️ **Details :** **${song?.name}**\n▶️ **Disfruta de la última experiencia de músca :D ** \n▶️ **Si el enlace se interrumpe, no dudes en contactarme!.**`)
 .setImage(queue.songs[0].thumbnail)
     .setColor('#FF0000')
     .setFooter({ text: 'More info - Use /help command [RTX GAMING]' });
