@@ -14,7 +14,7 @@ module.exports = async (client, queue, song) => {
     .setDescription(`\n ‎ \n▶️ **Details :** **${song?.name}**\n▶️ **Disfruta de la última experiencia de músca :D ** \n▶️ **Si el enlace se interrumpe, no dudes en contactarme!.**`)
 .setImage(queue.songs[0].thumbnail)
     .setColor('#FF0000')
-    .setFooter({ text: 'More info - Use /help command [RTX GAMING]' });
+    .setFooter({ text: 'Más información - Enviar Mensaje a [@Batu]' });
      
       queue?.textChannel?.send({ embeds: [embed] }).catch(e => { });
     }
