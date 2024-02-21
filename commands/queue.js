@@ -8,16 +8,16 @@
   ╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝          
 
    
-   # MADE BY RTX!! FEEL FREE TO USE ANY PART OF CODE
-   ## FOR HELP CONTACT ME ON DISCORD
-   ## Contact    [ DISCORD SERVER :  https://discord.gg/FUEHs7RCqz ]
-   ## YT : https://www.youtube.com/channel/UCPbAvYWBgnYhliJa1BIrv0A
+   # EN DESARROLLO BY BATU
+   ## PARA AYUDA ESCRÍBEME POR MENSAJE PRIVADO
+   ## Contact    [ DISCORD SERVER :  https://discord.gg/kawaiianimes ]
+   ## YT : https://www.youtube.com/channel/UCt2ZB6mzc983GzKw7-tNbCQ
 */
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const db = require("../mongoDB");
 module.exports = {
   name: "queue",
-  description: "It shows you the queue list.",
+  description: "Esto te mostrara la lista de reproducción.",
   permissions: "0x0000000000000800",
   options: [],
   run: async (client, interaction) => {
@@ -25,8 +25,8 @@ module.exports = {
     try {
 
      const queue = client.player.getQueue(interaction.guild.id);
-      if (!queue || !queue.playing) return interaction.reply({ content: '⚠️ No music playing!!', ephemeral: true }).catch(e => { })
-      if (!queue.songs[0]) return interaction.reply({ content: '⚠️ Queue is empty!!', ephemeral: true }).catch(e => { })
+      if (!queue || !queue.playing) return interaction.reply({ content: '⚠️ No hay música sonando!!', ephemeral: true }).catch(e => { })
+      if (!queue.songs[0]) return interaction.reply({ content: '⚠️ La lista está vacía!!', ephemeral: true }).catch(e => { })
 
       const trackl = []
       queue.songs.map(async (track, i) => {
@@ -67,7 +67,7 @@ module.exports = {
       const generateEmbed = async (start) => {
         let sayı = page === 1 ? 1 : page * kaçtane - kaçtane + 1
         const current = trackl.slice(start, start + kaçtane)
-        if (!current || !current?.length > 0) return interaction.reply({ content: '⚠️ Queue is empty!!', ephemeral: true }).catch(e => { })
+        if (!current || !current?.length > 0) return interaction.reply({ content: '⚠️ La lista está vacía!!', ephemeral: true }).catch(e => { })
         return new EmbedBuilder()
           .setTitle(`${interaction.guild.name}  Queue`)
           .setThumbnail(interaction.guild.iconURL({ size: 2048, dynamic: true }))
@@ -147,7 +147,7 @@ module.exports = {
           const embed = new EmbedBuilder()
             .setTitle('Command Timeout')
             .setColor(`#ecfc03`)
-            .setDescription('▶️ Execute the Queue command again!!')
+            .setDescription('▶️ Ejecuta el comando de lista de nuevo!!')
           return interaction?.editReply({ embeds: [embed], components: [button] }).catch(e => { })
 
         })
