@@ -6,11 +6,11 @@ let selectedThumbnailURL;
 
 module.exports = {
   name: "play",
-  description: "come one let's hear some music!!",
+  description: "¡Vamos! Comencemos a escuchar algo de música n.n",
   permissions: "0x0000000000000800",
   options: [{
     name: 'name',
-    description: 'Type the name of the music you want to play.',
+    description: 'Escribe el nombre de la canción que quieras escuchar.',
     type: ApplicationCommandOptionType.String,
     required: true
   }],
@@ -28,10 +28,10 @@ module.exports = {
           interaction
         });
       } catch (e) {
-        return interaction.editReply({ content: `❌ No results` }).catch(e => { });
+        return interaction.editReply({ content: `❌ Sin Resultados` }).catch(e => { });
       }
 
-      if (!res || !res.length || !res.length > 1) return interaction.reply({ content: `❌ No results`, ephemeral: true }).catch(e => { });
+      if (!res || !res.length || !res.length > 1) return interaction.reply({ content: `❌ Sin REsultados`, ephemeral: true }).catch(e => { });
 
       const embed = new EmbedBuilder();
       embed.setColor(client.config.embedColor);
@@ -67,7 +67,7 @@ module.exports = {
           .setCustomId('cancel')
       );
 
-      embed.setDescription(`${maxTracks.map((song, i) => `**${i + 1}**. [${song.name}](${song.url}) | \`${song.uploader.name}\``).join('\n')}\n\n✨Choose a song from below!!`);
+      embed.setDescription(`${maxTracks.map((song, i) => `**${i + 1}**. [${song.name}](${song.url}) | \`${song.uploader.name}\``).join('\n')}\n\n✨Selecciona una canción de la lista :3!!`);
 
       let code;
       if (buttons1 && buttons2) {
@@ -83,7 +83,7 @@ module.exports = {
         collector.on('collect', async (button) => {
           switch (button.customId) {
             case 'cancel': {
-              embed.setDescription(`Search interrupted`);
+              embed.setDescription(`Busqueda interrumpida`);
               await interaction.editReply({ embeds: [embed], components: [] }).catch(e => { });
               return collector.stop();
             }
@@ -100,7 +100,7 @@ module.exports = {
                   interaction
                 });
               } catch (e) {
-                await interaction.editReply({ content: `❌ No results!`, ephemeral: true }).catch(e => { });
+                await interaction.editReply({ content: `❌ Sin Resultados!`, ephemeral: true }).catch(e => { });
               }
               return collector.stop();
             }
