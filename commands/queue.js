@@ -168,8 +168,8 @@ module.exports = {
   ╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝          
 
    
-   # MADE BY RTX!! FEEL FREE TO USE ANY PART OF CODE
-   ## FOR HELP CONTACT ME ON DISCORD
-   ## Contact    [ DISCORD SERVER :  https://discord.gg/FUEHs7RCqz ]
-   ## YT : https://www.youtube.com/channel/UCPbAvYWBgnYhliJa1BIrv0A
+   # EN DESARROLLO BY BATU
+   ## PARA AYUDA ESCRÍBEME POR MENSAJE PRIVADO
+   ## Contact    [ DISCORD SERVER :  https://discord.gg/kawaiianimes ]
+   ## YT : https://www.youtube.com/channel/UCt2ZB6mzc983GzKw7-tNbCQ
 */
