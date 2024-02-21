@@ -2,17 +2,17 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const db = require("../mongoDB");
 module.exports = {
   name: "playsong",
-  description: "Play a track.",
+  description: "Lanza una pista :D.",
   permissions: "0x0000000000000800",
   options: [
     {
       name: "normal",
-      description: "Open music from other platforms.",
+      description: "Abrir música de otras plataformas.",
       type: ApplicationCommandOptionType.Subcommand,
       options: [
         {
           name: "name",
-          description: "Write your music name.",
+          description: "Escribe el nombre de la canción.",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -20,12 +20,12 @@ module.exports = {
     },
     {
       name: "playlist",
-      description: "Write your playlist name.",
+      description: "Escribe el nombre de la playlist.",
       type: ApplicationCommandOptionType.Subcommand,
       options: [
         {
           name: "name",
-          description: "Write the name of the playlist you want to create.",
+          description: "Escribe el nombre de la playlist que deseas crear.",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -127,7 +127,7 @@ module.exports = {
   const embed = new EmbedBuilder()
     .setColor('#3498db')
     .setColor('#FF0000')
-    .setDescription('**🎸 Get ready for a musical journey!**');
+    .setDescription('**🎸 Prepárate para un viaje musical!**');
 
   await interaction.reply({ embeds: [embed] }).catch(e => {});
 
@@ -141,7 +141,7 @@ module.exports = {
     const errorEmbed = new EmbedBuilder()
       .setColor('#e74c3c')
       .setColor('#FF0000')
-      .setDescription('❌ No results found!!');
+      .setDescription('❌ No hay resultados!!');
 
     await interaction.editReply({ embeds: [errorEmbed], ephemeral: true }).catch(e => {});
   }
